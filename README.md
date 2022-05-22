@@ -48,3 +48,4 @@ Components:
 - OptionsDialog
 - ProfilePicture
 - Layout
+- Seo
