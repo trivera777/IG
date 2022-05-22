@@ -13,13 +13,13 @@ function App() {
   return (
   <Router>
     <Switch>
-      <Route path="/" component={FeedPage} />
-      <Route path="/explore" component={ExplorePage} />
-      <Route path="/:username" component={ProfilePage} />
-      <Route path="/p/:postId" component={PostPage} />
-      <Route path="/accounts/edit" component={EditProfilePage} />
-      <Route path="/accounts/login" component={LoginPage} />
-      <Route path="/accounts/emailsignup" component={SignUpPage} />
+      <Route exact path="/" component={FeedPage} />
+      <Route  path="/explore" component={ExplorePage} />
+      <Route exact path="/:username" component={ProfilePage} />
+      <Route exact path="/p/:postId" component={PostPage} />
+      <Route  path="/accounts/edit" component={EditProfilePage} />
+      <Route  path="/accounts/login" component={LoginPage} />
+      <Route  path="/accounts/emailsignup" component={SignUpPage} />
       <Route path="*" component={NotFoundPage} />
     </Switch>
   </Router>
