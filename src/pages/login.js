@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoginPageStyles } from "../styles";
 import SEO from '../components/shared/Seo'
-import { CardHeader, TextField, Card, Button } from "@material-ui/core";
+import { CardHeader, TextField, Card, Button, Typography, LoginWithFacebook } from "@material-ui/core";
 
 function LoginPage() {
  const classes = useLoginPageStyles();
@@ -12,7 +12,7 @@ function LoginPage() {
     <section className={classes.section}>
       <article>
         <Card className={classes.card}>
-          <CardHeader className={classes.cardHeader} >
+          <CardHeader className={classes.cardHeader} />
             <form>
               <TextField 
               fullWidth
@@ -37,10 +37,25 @@ function LoginPage() {
               className={classes.button}
               type="submit"
               >
+                Login
               </Button>
             </form>
-            
-          </CardHeader>
+            <div className={classes.orContainer} >
+              <div className={classes.orLine} >
+                <div>
+                  <Typography variant="body2" color="textSecondary" >
+                    OR
+                  </Typography>
+                </div>
+                <div className={classes.orLine} />
+              </div>
+            </div>
+              <LoginWithFacebook color="secondary" iconColor="blue" />
+              <Button fullWidth color="secondary">
+                <Typography variant="caption">
+                  Forgot password?
+                </Typography>
+              </Button>
         </Card>
       </article>
     </section>
