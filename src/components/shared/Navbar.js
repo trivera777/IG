@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavbarStyles } from "../../styles";
-import { AppBar, Link } from '@material-ui/core'
+import { AppBar } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import logo from '../../images/logo.png'
 
 function Navbar() {
@@ -11,11 +12,11 @@ function Navbar() {
       <section className={classes.section} >
         <Logo />
       </section>
-      </AppBar>
+    </AppBar>
   )
 }
 
-function Logo(){
+function Logo() {
   const classes = useNavbarStyles()
 
   return(
