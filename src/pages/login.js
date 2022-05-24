@@ -9,6 +9,8 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import FacebookIconBlue from '../images/facebook-icon-blue.svg'
+import FacebookIconWhite from '../images/facebook-icon-white.png'
 
 function LoginPage() {
   const classes = useLoginPageStyles();
@@ -68,7 +70,7 @@ function LoginPage() {
             </Typography>
             <Link to="/accounts/emailsignup">
               <Button color="primary" className={classes.signUpButton}>
-                SignUp
+                Sign Up
               </Button>
             </Link>
           </Card>
@@ -76,6 +78,23 @@ function LoginPage() {
       </section>
     </>
   );
+}
+
+function LoginWithFacebook({ color, iconColor }){
+  const classes = useLoginPageStyles();
+  const facebookIcon = iconColor === 'blue' ? FacebookIconBlue : FacebookIconWhite
+
+  return (
+    <Button fullWidth color={color}>
+      <img
+      src={facebookIcon}
+      alt="Facebook Icon"
+      className={classes.facebookIcon} 
+      />
+      Log In with Facebook
+    </Button>
+  )
+
 }
 
 export default LoginPage;
