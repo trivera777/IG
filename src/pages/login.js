@@ -50,7 +50,7 @@ function LoginPage() {
               </Button>
             </form>
             <div className={classes.orContainer}>
-              <div className={classes.orLine}>
+              <div className={classes.orLine} />
                 <div>
                   <Typography variant="body2" color="textSecondary">
                     OR
@@ -58,7 +58,6 @@ function LoginPage() {
                 </div>
                 <div className={classes.orLine} />
               </div>
-            </div>
             <LoginWithFacebook color="secondary" iconColor="blue" />
             <Button fullWidth color="secondary">
               <Typography variant="caption">Forgot password?</Typography>
