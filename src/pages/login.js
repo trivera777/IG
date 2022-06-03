@@ -79,7 +79,7 @@ function LoginPage() {
   );
 }
 
-function LoginWithFacebook({ color, iconColor }){
+export function LoginWithFacebook({ color, iconColor }){
   const classes = useLoginPageStyles();
   const facebookIcon = iconColor === 'blue' ? FacebookIconBlue : FacebookIconWhite
 
