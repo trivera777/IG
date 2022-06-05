@@ -1,35 +1,53 @@
 import React from "react";
 import { useSignUpPageStyles } from "../styles";
 import SEO from "../components/shared/Seo";
-// import { LoginWithFacebook } from "./login";
-import {
-  CardHeader,
-  TextField,
-  Card,
-  Button,
-  Typography,
-} from "@material-ui/core";
+import { LoginWithFacebook } from "./login";
+import { Card, TextField, Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import FacebookIconBlue from '../images/facebook-icon-blue.svg'
-import FacebookIconWhite from '../images/facebook-icon-white.png'
 
 function SignUpPage() {
   const classes = useSignUpPageStyles();
 
   return (
-    
     <>
       <SEO title="Sign Up" />
       <section className={classes.section}>
         <article>
           <Card className={classes.card}>
             <div className={classes.cardHeader} />
-            <Typography className={classes.cardHeaderSubHeader} >
+            <Typography className={classes.cardHeaderSubHeader}>
               Sign up to see photos and videos from your friends.
             </Typography>
-            <LoginWithFacebook color="primary" iconColor="white" 
-            variant="contained" />
+            <LoginWithFacebook
+              color="primary"
+              iconColor="white"
+              variant="contained"
+            />
+            <div className={classes.orContainer}>
+              <div className={classes.orLine} />
+              <div>
+                <Typography variant="body2" color="textSecondary">
+                  OR
+                </Typography>
+              </div>
+              <div className={classes.orLine} />
+            </div>
             <form>
+              <TextField
+                fullWidth
+                variant="filled"
+                label="Email"
+                type="email"
+                margin="dense"
+                className={classes.textField}
+              />
+              <TextField
+                fullWidth
+                variant="filled"
+                label="Full Name"
+                margin="dense"
+                className={classes.textField}
+              />
               <TextField
                 fullWidth
                 variant="filled"
@@ -42,9 +60,10 @@ function SignUpPage() {
                 fullWidth
                 variant="filled"
                 label="Password"
+                typer="password"
                 margin="dense"
                 className={classes.textField}
-                autoComplete="current-password"
+                autoComplete="new-password"
               />
               <Button
                 variant="contained"
@@ -53,21 +72,17 @@ function SignUpPage() {
                 className={classes.button}
                 type="submit"
               >
-                Login
+                Sign Up
               </Button>
             </form>
-            <LoginWithFacebook color="secondary" iconColor="blue" />
-            <Button fullWidth color="secondary">
-              <Typography variant="caption">Forgot password?</Typography>
-            </Button>
           </Card>
-          <Card className={classes.signUpCard}>
+          <Card className={classes.loginCard}>
             <Typography align="right" variant="body2">
-              Don't have an acccount?
+              Have an acccount?
             </Typography>
-            <Link to="/accounts/emailsignup">
-              <Button color="primary" className={classes.signUpButton}>
-                Sign Up
+            <Link to="/accounts/login">
+              <Button color="primary" className={classes.loginButton}>
+                Log in
               </Button>
             </Link>
           </Card>
@@ -77,20 +92,4 @@ function SignUpPage() {
   );
 }
 
-export function LoginWithFacebook({ color, iconColor }){
-  const classes = useSignUpPageStyles();
-  const facebookIcon = iconColor === 'blue' ? FacebookIconBlue : FacebookIconWhite
-
-  return (
-    <Button fullWidth color={color}>
-      <img
-      src={facebookIcon}
-      alt="Facebook Icon"
-      className={classes.facebookIcon} 
-      />
-      Log In with Facebook
-    </Button>
-  )
- 
-}
 export default SignUpPage;
