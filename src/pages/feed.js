@@ -1,10 +1,11 @@
 import React from "react";
 import { useFeedPageStyles } from "../styles";
+import Layout from '../components/shared/Layout'
 
 function FeedPage() {
-  useFeedPageStyles();
+  const classes = useFeedPageStyles();
 
-  return <div>FeedPage</div>;
+  return <Layout>FeedPage</Layout>;
 }
 
 export default FeedPage;
