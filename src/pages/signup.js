@@ -60,7 +60,7 @@ function SignUpPage() {
                 fullWidth
                 variant="filled"
                 label="Password"
-                typer="password"
+                type="password"
                 margin="dense"
                 className={classes.textField}
                 autoComplete="new-password"
