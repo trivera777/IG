@@ -88,6 +88,9 @@ function FeedPost({ post }) {
               </Link>
             </div>
           ))}
+          <Typography color="textSecondary" className={classes.datePosted}>
+            3 DAYS AGO
+          </Typography>
         </div>
       </article>
     </>
