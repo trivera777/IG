@@ -3,12 +3,12 @@ import { useFeedPostStyles } from "../../styles";
 import UserCard from "../shared/UserCard";
 import { MoreIcon, CommentIcon, ShareIcon } from "../../icons";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 function FeedPost({ post }) {
   const classes = useFeedPostStyles();
-  const { media, id, likes } = post;
+  const { media, id, likes, user, caption, comments } = post;
   const [showCaption, setCaption] = React.useState(false);
 
   return (
@@ -43,7 +43,39 @@ function FeedPost({ post }) {
                 {user.username}
               </Typography>
             </Link>
+            {showCaption ? (
+              <Typography
+              variant="body2"
+              component="span"
+              dangerouslySetInnerHTML={{__html: caption}}
+              />
+            ) : (
+              <div className={classes.captionWrapper}>
+                <HTMLEllipsis
+                unsafeHTML={caption}
+                className-={classes.caption}
+                maxLine="0"
+                ellipsis="..."
+                basedOn="letters"
+                />
+                <Button className={classes.moreButton} onClick={() => setCaption(true)} >
+                more
+                </Button>
+              </div>
+            )}
           </div>
+          <Link to={`/p/${id}`}>
+            <Typography className={classes.commentsLink} variant="body2" component="div">
+              View all {comments.length} comments
+            </Typography>
+          </Link>
+          {comments.map(comment => (
+            <div key={comment.id}>
+              <Link to={`/${comment.user.username}`}>
+                
+              </Link>
+            </div>
+          ))}
         </div>
       </article>
     </>
