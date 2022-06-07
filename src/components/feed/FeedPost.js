@@ -3,7 +3,7 @@ import { useFeedPostStyles } from "../../styles";
 import UserCard from "../shared/UserCard";
 import { MoreIcon, CommentIcon, ShareIcon } from "../../icons";
 import { Link } from "react-router-dom";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Typography, Divider } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 function FeedPost({ post }) {
@@ -102,3 +102,17 @@ function FeedPost({ post }) {
 }
 
 export default FeedPost;
+
+//  function LikeButton(){
+//   return <>LikeButton</>
+//  }
+
+//  function SaveButton(){
+//   return <>SaveButton</>
+   
+// }
+
+// function Comment(){
+//   return <>Comment</>
+   
+// }
