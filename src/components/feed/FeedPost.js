@@ -92,6 +92,10 @@ function FeedPost({ post }) {
             3 DAYS AGO
           </Typography>
         </div>
+        <Hidden xsDown>
+          <Divider />
+          <Comment />
+        </Hidden>
       </article>
     </>
   );
