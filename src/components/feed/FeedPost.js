@@ -1,7 +1,7 @@
 import React from "react";
 import { useFeedPostStyles } from "../../styles";
 import UserCard from "../shared/UserCard";
-import { MoreIcon } from '../../icons'
+import { MoreIcon, CommentIcon, ShareIcon } from '../../icons'
 import { Link } from 'react-router-dom'
 import { Typography } from "@material-ui/core";
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html'
@@ -33,8 +33,12 @@ function FeedPost({ post }) {
         <Typography className={classes.like} variant="subtitle2">
         <span>{likes === 1 ? '1 like' : `${likes} likes`}</span>
         </Typography>
+        <div className={showCaption ? classes.expanded : classes.collapsed}>
+          <Link to={`/${user.username}`}>
+            
+          </Link>
+        </div>
       </div>
-
       </article>
     </>
   )
