@@ -4,6 +4,7 @@ import UserCard from "../shared/UserCard";
 import { MoreIcon } from '../../icons'
 import { Link } from 'react-router-dom'
 import { Typography } from "@material-ui/core";
+import HTMLEllipsis from 'react-lines-ellipsis/lib/html'
 
 function FeedPost({ post }) {
   const classes = useFeedPostStyles();
