@@ -1,7 +1,7 @@
 import React from "react";
 import { useFeedPostStyles } from "../../styles";
 import UserCard from "../shared/UserCard";
-import { MoreIcon, CommentIcon, ShareIcon } from "../../icons";
+import { MoreIcon, CommentIcon, ShareIcon, UnlikeIcon, LikeIcon } from "../../icons";
 import { Link } from "react-router-dom";
 import { Button, Typography, Divider, Hidden } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
@@ -104,7 +104,23 @@ function FeedPost({ post }) {
 export default FeedPost;
 
  function LikeButton(){
-  return <>LikeButton</>
+   const classes = useFeedPostStyles()
+   const [liked, setLiked] = React.useState(false)
+   const Icon = liked ? UnlikeIcon : LikeIcon
+   const className = liked ? classes.liked : classes.like
+   const onClick = liked ? handleUnlike : handleLike
+
+   function handleLike(){
+     console.log('like');
+     setLiked(true)
+   }
+
+   function handleUnlike(){
+    console.log('unlike');
+    setLiked(false)
+   }
+
+  return <Icon className={className} onClick={onClick} />
  }
 
  function SaveButton(){
