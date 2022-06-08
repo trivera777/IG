@@ -161,12 +161,13 @@ function Comment() {
   return (
     <div className={classes.commentContainer}>
       <TextField
-      fullwidth
+      fullWidth
       value={content}
       placeholder="Add a comment..."
-      mutiline
+      multiline
       rowsMax={2}
       rows={1}
+      className={classes.textField}
       onChange={event => setContent(event.target.value)}
       InputProps={{
         classes: {
@@ -175,7 +176,13 @@ function Comment() {
         }
       }}
       />
-      
+      <Button 
+      color="primary"
+      className={classes.commentButton}
+      disabled={!content.trim()}
+      >
+        Post
+      </Button>
     </div>
   )
 }
