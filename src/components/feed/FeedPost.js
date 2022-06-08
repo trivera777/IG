@@ -1,7 +1,7 @@
 import React from "react";
 import { useFeedPostStyles } from "../../styles";
 import UserCard from "../shared/UserCard";
-import { MoreIcon, CommentIcon, ShareIcon, UnlikeIcon, LikeIcon } from "../../icons";
+import { MoreIcon, CommentIcon, ShareIcon, UnlikeIcon, LikeIcon, RemoveIcon, SaveIcon } from "../../icons";
 import { Link } from "react-router-dom";
 import { Button, Typography, Divider, Hidden } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
@@ -124,7 +124,22 @@ export default FeedPost;
  }
 
  function SaveButton(){
-  return <>SaveButton</>
+  const classes = useFeedPostStyles()
+   const [saved, setSaved] = React.useState(false)
+   const Icon = saved ? RemoveIcon : SaveIcon
+   const onClick = saved ? handleRemove : handleSave
+
+   function handleSave(){
+     console.log('saved');
+     setSaved(true)
+   }
+
+   function handleRemove(){
+    console.log('removed');
+    setSaved(false)
+   }
+
+  return <Icon className={classes.saveIcon} onClick={onClick} />
    
 }
 
