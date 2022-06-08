@@ -17,7 +17,18 @@ function FollowButton({ side }) {
     </Button>
   );
 
-  return <div>FollowButton</div>;
+  const followingButton = (
+    <Button
+      variant={side ? "text" : "outlined"}
+      className={classes.button}
+      onClick={() => setFollowing(false)}
+      fullWidth
+    >
+      Following
+    </Button>
+  )
+
+  return isFollowing ? followingButton : followButton
 }
 
 export default FollowButton;
