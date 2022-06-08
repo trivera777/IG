@@ -53,7 +53,7 @@ function FeedPost({ post }) {
               <div className={classes.captionWrapper}>
                 <HTMLEllipsis
                 unsafeHTML={caption}
-                className-={classes.caption}
+                className={classes.caption}
                 maxLine="0"
                 ellipsis="..."
                 basedOn="letters"
