@@ -11,7 +11,7 @@ import { LoadingLargeIcon } from "../icons";
 
 function FeedPage() {
   const classes = useFeedPageStyles();
-  const [isEndofFeed] = React.useState(false)
+  const [isEndofFeed] = React.useState(true)
 
   let loading = false;
   if (loading) return <LoadingScreen />
